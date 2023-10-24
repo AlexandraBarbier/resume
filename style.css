@@ -233,6 +233,7 @@ ol {
     padding: 0;
     padding-inline-start: 22px;
     line-height: 27px;
+    max-width: 450px;
 }
 
 hr {
