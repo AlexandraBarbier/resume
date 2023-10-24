@@ -1220,9 +1220,9 @@ h2 {
     height: 100%;
     top: 0;
     left: 0;
-    background-image: linear-gradient(19deg, #212cfd 0%, #B721FF 100%);
-    mix-blend-mode: multiply;
-    opacity: .8;
+    background-image: linear-gradient(19deg, #000223 0%, #111 100%);
+    /* mix-blend-mode: multiply; */
+    opacity: .4;
 }
 
 .effect-text-container {
