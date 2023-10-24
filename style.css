@@ -1205,7 +1205,7 @@ h2 {
 
 .bckgrndImg {
     height: 100vh;
-    background-image: url(/profilImg.jpg);
+    background-image: url(profilImg.jpg);
     width: 100%;
     background-position: center center;
     background-size: cover;
