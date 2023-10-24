@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexandra Barbier</title>
+    <----- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/iuv0ssq.css">
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <a href="#services">
+                    <div class="s-container s1">
+                        <span>Skills</span>
+                    </div>
+                    <div class="s-container s2">
+                        <span>Skills</span>
+                    </div>
+                </a>
+            </div>
+            <div class="menu">
+                <a href="#experiences">
+                    <div class="s-container s1">
+                        <span>Expériences</span>
+                    </div>
+                    <div class="s-container s2">
+                        <span>Expériences</span>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="menu">
+                <a href="#education">
+                    <div class="s-container s1">
+                        <span>Éducation</span>
+                    </div>
+                    <div class="s-container s2">
+                        <span>Éducation</span>
+                    </div>
+                </a>
+            </div>
+            <div class="menu">
+                <a href="#contact">
+                    <div class="s-container s1">
+                        <span>Contact</span>
+                    </div>
+                    <div class="s-container s2">
+                        <span>Contact</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" id="svg-filtro-cursore">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+                    result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+    <div class="stamp">
+        <div class="circle">
+            <p id="circle-content">WEBMASTERING . DÉVELOPPEMENT . DESIGN .</p>
+        </div>
+        <p>A.L.B.A</p>
+    </div>
+
+    <div id="cursor" class="Cursor"></div>
+    <section class="first">
+        <div class="left">
+            <div class="bckgrndImg"></div>
+        </div>
+        <div class="right">
+            <div>
+                <div class="effect-text-container">
+
+                    <p>Alexandra Barbier - 29 ans - Yvelines</p>
+                    <script>
+
+                        $(document).ready(documentReady);
+
+                        function documentReady() {
+
+                            var characterCollection = ["A", "a", "1", "2", "3", "b", "c", "d", "B", "4", "5", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+                            var currentText = $(".effect-text-container p").text();
+
+                            var currentTextCollection = new Array();
+
+                            var characterCount = 0;
+
+                            var characterSpeed = 90;
+
+                            pushCurrentTextChrachters();
+
+                            function pushCurrentTextChrachters() {
+
+                                for (var i = 0; i < currentText.length; i++) {
+
+                                    var currentCharacter = currentText.slice(i, i + 1);
+
+                                    currentTextCollection.push(currentCharacter);
+
+                                }
+
+                            }
+
+                            var characterCountIncreaseInterval = setInterval(characterCountIncrease, characterSpeed);
+
+                            function characterCountIncrease() {
+
+                                if (characterCount == currentTextCollection.length) {
+
+                                    clearInterval(characterCountIncreaseInterval);
+
+                                    clearInterval(setRandomTextInterval);
+
+                                }
+
+                                characterCount++;
+
+                            }
+
+                            function getRandomText() {
+
+                                var result = "";
+
+                                if (characterCount == 0) {
+
+                                    for (var i = 0; i < currentTextCollection.length; i++) {
+
+                                        var randomCharacter = characterCollection[Math.floor(Math.random() * characterCollection.length)];
+
+                                        result += randomCharacter;
+
+                                    }
+
+                                }
+                                else {
+
+                                    result = currentText.slice(0, characterCount);
+
+                                    for (var i = 0; i < currentTextCollection.length - characterCount; i++) {
+
+                                        var randomCharacter = characterCollection[Math.floor(Math.random() * characterCollection.length)];
+
+                                        result += randomCharacter;
+
+                                    }
+
+                                }
+
+                                return result;
+
+                            }
+
+                            var setRandomTextInterval = setInterval(setRandomText, 50);
+
+                            function setRandomText() {
+
+                                console.log(getRandomText());
+
+                                $(".effect-text-container p").text(getRandomText());
+                                var elements = $(".effect-text-container p").text(getRandomText());
+                            }
+
+
+                            Array.prototype.forEach.call(elements, function (el) {
+
+                                documentReady.init();
+                                el.addEventListener('mouseover', function () {
+                                    documentReady.init();
+                                });
+                            });
+                        }
+                    </script>
+                </div>
+                <h1>Développeuse <span><br>Wordpress</span></h1>
+                <p>Je suis un développeuse WordPress passionnée par le web et les technologies. Mon objectif est de
+                    concevoir
+                    des
+                    solutions web qui allient esthétique et performance, tout en offrant une expérience utilisateur
+                    optimale.</p>
+                <p>Ma mission est de maintenir votre site web actif, vivant et fonctionnel. Votre site web évolue au fur
+                    et à
+                    mesure que votre entreprise se
+                    développe.</p>
+                <h2>Comment ?</h2>
+                <p>
+                    Par la modification et/ou l'intégration de contenus (produits, médias, textes, articles, landing
+                    page,
+                    pages...), la mise en place de fonctionnalités plus ou moins spécifiques, l'analyses de statistiques
+                    et de
+                    performance, l'optimisation du référencement naturel, l'optimisation de la base de donnée ou encore
+                    la
+                    résolution des bugs d'affichages en urgence.
+                </p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="s-services" id="services">
+        <div>
+            <div class="h2-container">
+                <h2 id="services">Skills - Compétences</h2>
+
+            </div>
+            <ol>
+                <li><strong>Développement WordPress</strong></li>
+                <li><strong>Mastering Wordpress</strong></li>
+                <li>HTML // CSS3 // JS // PHP8 </li>
+                <li>(JSon, React, SQL, Symphony...)</li>
+                <li>Responsive et mobile-friendly</li>
+                <li>Webdesign</li>
+                <li>Adobe CS & Figma</li>
+                <li>Plugins WordPress</li>
+                <li>WooCommerce</li>
+                <li>ACF</li>
+                <li>Optimisation SEO</li>
+                <li>IA (openAi // GPT3 // Copymatic)</li>
+                <li>SreamingFrog</li>
+                <li>Google Search Consol // Google Tag // Google Analytics // Clarity</li>
+                <li>Autres CMS (Shopify // Prestashop // Joomla...)</li>
+                <li>Excel // CSV files</li>
+                <li>Développement from scratch</li>
+            </ol>
+        </div>
+        </div>
+
+        <div id="experiences">
+            <div class="h2-container__exp">
+                <h2>Expériences</h2>
+
+            </div>
+            <ol>
+                <li>
+                    <h2>MR Statégies - entreprise de branding et stratégie</h2>
+                    <p>Développement de pages HTML/CSS/JS</p>
+                    <p>Maquette d'une page manifesto</p>
+                    <p>Corrections ponctuelles</p>
+                    <p>Développement fonctionnel</p>
+                </li>
+                <li>
+                    <h2>La Beuhtique CBD - entreprise française de CBD</h2>
+                    <p>Développement e-commerce</p>
+                    <p>Webdesign</p>
+                    <p>Optimisation SEO</p>
+                    <p>Intégration de produits, articles, pages</p>
+                    <p>Maintenance</p>
+                    <h3>Et aussi...</h3>
+                    <p>Logotype</p>
+                    <p>Packaging</p>
+                    <p>Marvellous Island Festival : Backlink, newsletters, affichages</p>
+                </li>
+                <li>
+                    <h2>L'instable photo - Jean-Michel Landon</h2>
+                    <p>Refonte WordPress</p>
+                    <p>Reponsive design</p>
+                    <p>Architecture et produits (photographies)</p>
+                </li>
+                <li>
+                    <h2>Programme Benevolence - Formations parentalité</h2>
+                    <p>Développement de la page d'acceuil</p>
+                    <p>Formation au plugin Elementor</p>
+                    <p>Intégration de pages et élements divers</p>
+                    <p>Changement de nom de domaine et mise en place du HTTPS</p>
+                    <p>Maintenance - Résolutions de divers bugs</p>
+                    <p>Nettoyage de fichiers sources et json</p>
+                </li>
+                <li>
+                    <h2>Cockines Love Store - Love store éthique</h2>
+                    <p>Maquette des pages princpales du site web e-commerce</p>
+                    <p>Développement WordPress et WooCommerce</p>
+                    <p>Architecture</p>
+                    <p>Intégration de + de 3000 produits et leurs catégories</p>
+                    <p>Intégration de plugin et logiciel POS</p>
+                    <h3>Et aussi...</h3>
+                    <p>Graphisme : Création logotype</p>
+                    <p>Graphisme : design enseignes du magasin de 300m2</p>
+                    <p>Graphisme : affiches publicitaires 3x4</p>
+                </li>
+                <li>
+                    <h2>Meta-versity : centre de formation</h2>
+                    <p>Maquette</p>
+                    <p>Développement web WordPress</p>
+                </li>
+                <li>
+                    <h2>Formations aux particuliers</h2>
+                    <p>Le B.0 de WordPress</p>
+                    <p>Prise en main de WordPress</p>
+                    <p>Intégrer son contenu dans un site web WordPress responsive</p>
+                    <p>Prise en main de WooCommerce</p>
+                    <p>Prise en main de RankMath</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="education">
+            <div class="h2-container__edu">
+                <h2>Éducation</h2>
+            </div>
+            <h3 class="services-heading">
+
+            </h3>
+            <ol>
+                <li>
+                    <h2>Bac littéraire option Arts Appliqués</h2>
+                    <p>2012 - Lycée Sonya Delaunay</p>
+                </li>
+                <li>
+                    <h2>Autodidacte</h2>
+                </li>
+                <li>
+                    <h2>Formation RNCP Bac+2 : commnuciation digitale</h2>
+                    <p>2019 - École supérieure des technologies créatives et du numériques</p>
+                </li>
+                <li>
+                    <h2>Formation RNCP Bac+3 : développement web et mobile</h2>
+                    <p>2020 - École supérieure des technologies créatives et du numériques</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <footer class="footer" id="contact">
+        <section class="footer-container">
+
+
+
+
+            <div class="column">
+                <div class="center">
+                    <div class="h2-container__contact">
+                        <h2 class="opacity" data-scroll>Contact</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <h2>Contactez-moi</h2>
+                        <p>
+                            Directement par téléphone ou par e-mail.
+                        </p>
+                        <a href="mailto:alba.webmester@gmail.com">Envoyer un e-mail</a>
+                        <a href="telto:#33634116107">Appeler</a>
+                    </div>
+                    <div>
+                        <h2>Prenons rendez-vous</h2>
+                        <p>
+                            Bookez dès maintenant un rendez-vous téléphonique (sans
+                            engagement)
+                        </p>
+                        <!-- Calendly link widget begin -->
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                            async></script>
+                        <a href=""
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/web_dev_design/30min?hide_event_type_details=1&background_color=#f1f1f1&text_color=111&primary_color=grey'});return false;">Prendre
+                            un rendez-vous</a>
+
+                        <!-- Calendly link widget end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+
+    <script>
+        function currentTime() {
+            let ct = new Date();
+            let time = document.querySelector("div.time");
+            let hours = ct.getHours();
+            let minutes = ct.getMinutes();
+            let seconds = ct.getSeconds();
+            document.getElementById("time").innerHTML = hours + ":" + minutes;
+        }
+        setInterval(currentTime, 1000);
+        //TIME
+        // var time = setInterval(currentTime, 1000);
+        // function currentTime() {
+        //   var date = new Date();
+        //   document.getElementById("time").innerHTML = date.toLocaleTimeString();
+        // }
+
+        // CONTACT LINK HOVER EFFECT
+        const spanContainers = document.querySelectorAll(
+            ".menu div, .hover--link div"
+        );
+        spanContainers.forEach((item) => {
+            const letters = item.children[0].textContent.split("");
+            item.innerHTML = "";
+
+            letters.forEach((el, index) => {
+                item.innerHTML += `<span style="transition-delay:${0.07 * index
+                    }s">${el}</span>`;
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.4,
+            };
+
+            // IMAGE ANIMATION
+
+            let revealCallback = (entries) => {
+                entries.forEach((entry) => {
+                    let container = entry.target;
+
+                    if (entry.isIntersecting) {
+                        console.log(container);
+                        container.classList.add("animating");
+                        return;
+                    }
+
+                    if (entry.boundingClientRect.top > 0) {
+                        container.classList.remove("animating");
+                    }
+                });
+            };
+
+            let revealObserver = new IntersectionObserver(revealCallback, options);
+
+            document.querySelectorAll(".reveal").forEach((reveal) => {
+                revealObserver.observe(reveal);
+            });
+
+            // TEXT ANIMATION
+
+            let fadeupCallback = (entries) => {
+                entries.forEach((entry) => {
+                    let container = entry.target;
+                    container.classList.add("not-fading-up");
+
+                    if (entry.isIntersecting) {
+                        container.classList.add("fading-up");
+                        return;
+                    }
+
+                    if (entry.boundingClientRect.top > 0) {
+                        container.classList.remove("fading-up");
+                    }
+                });
+            };
+
+            let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+
+            document.querySelectorAll(".fadeup").forEach((fadeup) => {
+                fadeupObserver.observe(fadeup);
+            });
+        });
+
+        const cursor = document.getElementById("cursor");
+        const amount = 20;
+        const sineDots = Math.floor(amount * 0.3);
+        const width = 26;
+        const idleTimeout = 150;
+        let lastFrame = 0;
+        let mousePosition = { x: 0, y: 0 };
+        let dots = [];
+        let timeoutID;
+        let idle = false;
+
+        let hoverTL;
+
+        class Dot {
+            constructor(index = 0) {
+                this.index = index;
+                this.anglespeed = 0.05;
+                this.x = 0;
+                this.y = 0;
+                this.scale = 1 - 0.05 * index;
+                this.range = width / 2 - (width / 2) * this.scale + 2;
+                this.limit = width * 0.75 * this.scale;
+                this.element = document.createElement("span");
+                TweenMax.set(this.element, { scale: this.scale });
+                cursor.appendChild(this.element);
+            }
+
+            lock() {
+                this.lockX = this.x;
+                this.lockY = this.y;
+                this.angleX = Math.PI * 2 * Math.random();
+                this.angleY = Math.PI * 2 * Math.random();
+            }
+
+            draw(delta) {
+                if (!idle || this.index <= sineDots) {
+                    TweenMax.set(this.element, { x: this.x, y: this.y });
+                } else {
+                    this.angleX += this.anglespeed;
+                    this.angleY += this.anglespeed;
+                    this.y = this.lockY + Math.sin(this.angleY) * this.range;
+                    this.x = this.lockX + Math.sin(this.angleX) * this.range;
+                    TweenMax.set(this.element, { x: this.x, y: this.y });
+                }
+            }
+        }
+
+        class Circle {
+            constructor(id) {
+                const el = document.getElementById(id);
+                const parent = el.parentElement;
+                parent.removeChild(el);
+                const chars = el.innerText.split("");
+                chars.push(" ");
+                for (let i = 0; i < chars.length; i++) {
+                    const span = document.createElement("span");
+                    span.innerText = chars[i];
+                    span.className = `char${i + 1}`;
+                    parent.appendChild(span);
+                }
+            }
+        }
+
+        function init() {
+            window.addEventListener("mousemove", onMouseMove);
+            window.addEventListener("touchmove", onTouchMove);
+
+            // eslint-disable-next-line no-new
+            new Circle("circle-content");
+            lastFrame += new Date();
+            buildDots();
+            render();
+        }
+
+        /*function limit(value, min, max) {
+            return Math.min(Math.max(min, value), max);
+        }*/
+
+        function startIdleTimer() {
+            timeoutID = setTimeout(goInactive, idleTimeout);
+            idle = false;
+        }
+
+        function resetIdleTimer() {
+            clearTimeout(timeoutID);
+            startIdleTimer();
+        }
+
+        function goInactive() {
+            idle = true;
+            for (let dot of dots) {
+                dot.lock();
+            }
+        }
+
+        function buildDots() {
+            for (let i = 0; i < amount; i++) {
+                let dot = new Dot(i);
+                dots.push(dot);
+            }
+        }
+
+        const onMouseMove = (event) => {
+            mousePosition.x = event.clientX - width / 2;
+            mousePosition.y = event.clientY - width / 2;
+            resetIdleTimer();
+        };
+
+        const onTouchMove = () => {
+            mousePosition.x = event.touches[0].clientX - width / 2;
+            mousePosition.y = event.touches[0].clientY - width / 2;
+            resetIdleTimer();
+        };
+
+        const render = (timestamp) => {
+            const delta = timestamp - lastFrame;
+            positionCursor(delta);
+            lastFrame = timestamp;
+            requestAnimationFrame(render);
+        };
+
+        const positionCursor = (delta) => {
+            let x = mousePosition.x;
+            let y = mousePosition.y;
+            dots.forEach((dot, index, dots) => {
+                let nextDot = dots[index + 1] || dots[0];
+                dot.x = x;
+                dot.y = y;
+                dot.draw(delta);
+                if (!idle || index <= sineDots) {
+                    const dx = (nextDot.x - dot.x) * 0.35;
+                    const dy = (nextDot.y - dot.y) * 0.35;
+                    x += dx;
+                    y += dy;
+                }
+            });
+        };
+
+        init();
+    </script>
+</body>
+
+<<<<<<< HEAD </html>
+    =======
+
+</html>
+>>>>>>> 7ae7ecc1bb443377bf5b7fe8984a2832934e975c
